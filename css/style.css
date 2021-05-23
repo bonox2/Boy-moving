@@ -1,0 +1,111 @@
+@import "reset.css";
+@import "base.css";
+
+.box {
+  display: flex;
+  border: 1px solid #000;
+  padding: 15px;
+  margin: 100px auto;
+  justify-content: center;
+}
+.box1 {
+  display: flex;
+  border: 1px solid #000;
+  padding: 15px 0;
+  margin: 100px auto;
+}
+/* смерть */
+.boy {
+  width: 275px;
+  height: 200px;
+}
+.boy.bd{
+  border: 1px solid #000;
+}
+.boy.action-animated {
+  background-position: 85px 0;
+  background-repeat: no-repeat;
+  background-size: auto 200px;
+  animation: action-animation 1s steps(14) infinite;
+}
+.boy.move-animated{
+  position: fixed;
+  bottom:-22px;
+  left: 0;
+  z-index: 1000;
+  transform: translateX(-100%) scaleX(1);
+  background-position: 85px 0;
+  background-repeat: no-repeat;
+  background-size: auto 800px;
+  background-image: url('../img/sprite/actions-sprite.png');
+  animation: action-animation 1s 2s steps(14) infinite, move 10s 2s linear infinite;
+}
+.run {
+  background-image: url("../img/sprite/run-sprite.png");
+}
+.dead {
+  background-image: url("../img/sprite/dead-sprite.png");
+}
+.jump {
+  background-image: url("../img/sprite/jump-sprite.png");
+}
+.idle {
+  background-image: url("../img/sprite/idle-sprite.png");
+}
+.walk {
+  background-image: url("../img/sprite/walk-sprite.png");
+}
+
+@keyframes action-animation {
+  100% {
+    background-position-x: -2963px;
+  }
+}
+
+@keyframes move{
+  0%{
+    background-position-y: -600px;
+  }
+  29.9999%{
+    background-position-y: -600px;
+  }
+  30%{
+    background-position-y: 0;
+    transform: translateX(50vw) scaleX(1);
+  }
+  39.9999%{
+    transform: translateX(50vw) scaleX(1);
+  }
+  40%{
+    transform: translateX(50vw) scaleX(-1);
+  }
+  49.9999%{
+    transform: translateX(50vw) scaleX(-1);
+  }
+  50%{
+    transform: translateX(50vw) scaleX(1);
+  }
+  59.9999%{
+    background-position-y: 0;
+    transform: translateX(50vw) scaleX(1);
+  }
+  60%{
+    background-position-y: -200px;
+    transform: translateX(50vw) scaleX(1);
+  }
+  70.4999%{
+    background-position-y: -200px;
+    transform: translateX(50vw) scaleX(1);
+  }
+  70.5%{
+    background-position-y: -400px;
+    transform: translateX(50vw) scaleX(1);
+  }
+  100%{
+    background-position-y: -400px;
+    transform: translateX(100vw) scaleX(1);
+  }
+}
+
+
+
